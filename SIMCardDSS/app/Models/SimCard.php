@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class SimCard extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['imei', 'phone_number', 'client_name', 'registration_date', 'tariff_id'];
+
+    public function tariff()
+    {
+        return $this->belongsTo(TariffPlan::class);
+    }
 }

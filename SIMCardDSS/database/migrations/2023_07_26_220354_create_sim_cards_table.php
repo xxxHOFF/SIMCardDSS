@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sim_cards', function (Blueprint $table) {
             $table->id();
-            $table->string('imei')->unique();
+            $table->integer('imei')->unique();
             $table->string('phone_number');
             $table->string('client_name');
             $table->date('registration_date');

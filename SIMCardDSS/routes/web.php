@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SimCardController;
+use App\Http\Controllers\TariffPlanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function (){
+   return view('welcome');
+})->name('welcome');;
+
+Route::resource('sim-cards', SimCardController::class);
+Route::resource('tariffs', TariffPlanController::class);
